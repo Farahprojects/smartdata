@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <script src="static/js/main.js" defer></script>
+</head>
+<body>
+    <div class="main-container">
+        <aside class="sidebar">
+            <button class="sidebar-btn" id="start-spider-btn">
+                <i class="fas fa-play"></i> Start Spider
+            </button>
+            <button class="sidebar-btn" id="stop-spider-btn">
+                <i class="fas fa-stop"></i> Stop Spider
+            </button>
+            <button class="sidebar-btn" id="add-product-btn">
+                <i class="fas fa-plus"></i> Add Product
+            </button>
+            <button class="sidebar-btn" id="update-product-btn">
+                <i class="fas fa-edit"></i> Update Product
+            </button>
+            <button class="sidebar-btn" id="delete-product-btn">
+                <i class="fas fa-trash"></i> Delete Product
+            </button>
+            <button class="sidebar-btn" id="tag-product-btn">
+                <i class="fas fa-tag"></i> Tag Product
+            </button>
+            <button class="sidebar-btn" id="add-regulation-btn">
+                <i class="fas fa-plus-circle"></i> Add Regulation
+            </button>
+            <button class="sidebar-btn" id="update-regulation-btn">
+                <i class="fas fa-edit"></i> Update Regulation
+            </button>
+            <button class="sidebar-btn" id="delete-regulation-btn">
+                <i class="fas fa-trash-alt"></i> Delete Regulation
+            </button>
+            <button class="sidebar-btn" id="tag-regulation-btn">
+                <i class="fas fa-tags"></i> Tag Regulation
+            </button>
+            <button class="sidebar-btn" id="download-files-btn">
+                <i class="fas fa-download"></i> Download Specs/Safety Sheets
+            </button>
+            <button class="sidebar-btn" id="view-downloads-btn">
+                <i class="fas fa-eye"></i> View Downloads
+            </button>
+            <div class="country-folders">
+                <div class="country">
+                    <button class="sidebar-btn">
+                        <i class="fas fa-flag"></i> UK
+                    </button>
+                    <button class="sidebar-btn" onclick="viewProducts('UK')">
+                        <i class="fas fa-box"></i> Products
+                    </button>
+                    <button class="sidebar-btn" onclick="viewRegulations('UK')">
+                        <i class="fas fa-book"></i> Regulations
+                    </button>
+                </div>
+                <div class="country">
+                    <button class="sidebar-btn">
+                        <i class="fas fa-flag"></i> USA
+                    </button>
+                    <button class="sidebar-btn" onclick="viewProducts('USA')">
+                        <i class="fas fa-box"></i> Products
+                    </button>
+                    <button class="sidebar-btn" onclick="viewRegulations('USA')">
+                        <i class="fas fa-book"></i> Regulations
+                    </button>
+                </div>
+                <div class="country">
+                    <button class="sidebar-btn">
+                        <i class="fas fa-flag"></i> Australia
+                    </button>
+                    <button class="sidebar-btn" onclick="viewProducts('Australia')">
+                        <i class="fas fa-box"></i> Products
+                    </button>
+                    <button class="sidebar-btn" onclick="viewRegulations('Australia')">
+                        <i class="fas fa-book"></i> Regulations
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <main class="content">
+            <div class="chat-wrapper">
+                <div class="chat-container" id="chat-container">
+                    <div id="chat-area" class="chat-area"></div>
+                </div>
+                <div class="search-bar">
+                    <button class="attach-icon">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <textarea placeholder="Ask or search..." id="search-input"></textarea>
+                    <button class="send-button" id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <button class="audio-button">
+                        <i class="fas fa-microphone"></i> Audio
+                    </button>
+                </div>
+            </div>
+            <div class="edit-content" id="edit-content">
+                <!-- Edit content area for products and regulations -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Pop-up Modal for Editing -->
+    <div id="edit-modal" class="edit-modal">
+        <div class="edit-modal-content">
+            <span class="close-button" onclick="closeEditModal()">&times;</span>
+            <iframe src="/templates/edit.html" frameborder="0" class="edit-iframe"></iframe>
+        </div>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div id="confirmation-dialog" class="edit-modal" style="display: none;">
+        <div class="edit-modal-content">
+            <span class="close-button" onclick="closeConfirmationDialog()">&times;</span>
+            <p id="confirmation-message">Are you sure you want to delete this item?</p>
+            <button onclick="confirmDelete()">Yes</button>
+            <button onclick="closeConfirmationDialog()">No</button>
+        </div>
+    </div>
+</body>
+</html>

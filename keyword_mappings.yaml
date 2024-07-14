@@ -1,0 +1,20 @@
+products:
+  waterproof: Waterproofing Products
+  gloves: Safety Gloves
+  nails: Construction Nails
+  # Add more product keywords and tags
+
+regulations:
+  health: Health Regulations
+  safety: Safety Regulations
+  environment: Environmental Regulations
+  # Add more regulation keywords and tags
+
+tags:
+  price: Price
+  region: Region
+  brand: Brand
+  color: Color
+  material_type: Material Type
+  dimensions: Dimensions
+  # Add more tags as needed

@@ -1,0 +1,8 @@
+rules:
+  - url: "example.com/waterproof"
+    keywords: ["waterproof", "sealant", "moisture barrier"]
+  - url: "example.com/gloves"
+    keywords: ["safety gloves", "work gloves", "protective gloves"]
+  - url: "example.com/nails"
+    keywords: ["construction nails", "nail sizes", "nail types"]
+  # Add more URL and keyword rules as needed
